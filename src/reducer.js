@@ -1,3 +1,5 @@
+export const ADD_TODOLIST= 'TodoList/Reducer/ADD-TODOLIST';
+
 const initialState = {
     "todolists": [
         {
@@ -18,7 +20,7 @@ const initialState = {
 
 const reducer = (state = initialState, action) => {
     switch (action.type) {
-        case "ADD-TODOLIST":
+        case ADD_TODOLIST:
             return {
                 ...state,
                 todolists: [...state.todolists, action.newTodolist]
