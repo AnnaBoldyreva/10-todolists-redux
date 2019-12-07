@@ -6,13 +6,9 @@ import TodoListTitle from "./TodoListTitle";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
 import {
-    ADD_TASK,
     addTaskAC,
-    DELETE_TASK,
-    DELETE_TODOLIST,
     deleteTaskAC,
     deleteTodolistAC,
-    UPDATE_TASK,
     updateTaskAC
 } from "./reducer";
 
