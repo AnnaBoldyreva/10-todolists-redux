@@ -1,4 +1,5 @@
 export const ADD_TODOLIST= 'TodoList/Reducer/ADD-TODOLIST';
+export const DELETE_TODOLIST= 'TodoList/Reducer/DELETE-TODOLIST';
 
 const initialState = {
     "todolists": [

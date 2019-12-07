@@ -5,6 +5,7 @@ import TodoListFooter from "./TodoListFooter";
 import TodoListTitle from "./TodoListTitle";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
+import {DELETE_TODOLIST} from "./reducer";
 
 class TodoList extends React.Component {
 
@@ -144,7 +145,7 @@ const mapDispatchToProps = (dispatch) => {
         },
         deleteTodolist: (todolistId) => {
             const action = {
-                type: "DELETE-TODOLIST",
+                type: DELETE_TODOLIST,
                 todolistId: todolistId
             };
             dispatch(action)
