@@ -22,6 +22,7 @@ class App extends React.Component {
         };
 
         this.props.addTodolist(newTodoList);
+        this.nextTodoListId++;
     };
 
     // componentDidMount() {
@@ -83,13 +84,9 @@ const mapStateToProps = (state) => {
 const mapDispatchToProps = (dispatch) => {
     return {
         addTodolist: (newTodolist) => {
-            const action = {
-                type: ADD_TODOLIST,
-                newTodolist: newTodolist
-            };
+            const action = addTodolist(newTodolist);
             dispatch(action)
         }
-
     }
 };
 

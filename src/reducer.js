@@ -1,5 +1,8 @@
-export const ADD_TODOLIST= 'TodoList/Reducer/ADD-TODOLIST';
-export const DELETE_TODOLIST= 'TodoList/Reducer/DELETE-TODOLIST';
+export const ADD_TODOLIST= 'TodoList/Reducer/ADD_TODOLIST';
+export const DELETE_TODOLIST= 'TodoList/Reducer/DELETE_TODOLIST';
+export const DELETE_TASK= 'TodoList/Reducer/DELETE_TASK';
+export const ADD_TASK = 'TodoList/Reducer/ADD_TASK';
+export const UPDATE_TASK = 'TodoList/Reducer/UPDATE_TASK';
 
 const initialState = {
     "todolists": [
@@ -25,13 +28,13 @@ const reducer = (state = initialState, action) => {
             return {
                 ...state,
                 todolists: [...state.todolists, action.newTodolist]
-            }
-        case "DELETE-TODOLIST":
+            };
+        case DELETE_TODOLIST:
             return {
                 ...state,
                 todolists: state.todolists.filter(tl => tl.id != action.todolistId)
-            }
-        case "DELETE-TASK":
+            };
+        case DELETE_TASK:
             return {
                 ...state,
                 todolists: state.todolists.map(tl => {
@@ -44,8 +47,8 @@ const reducer = (state = initialState, action) => {
                         return tl
                     }
                 })
-            }
-        case "ADD-TASK":
+            };
+        case ADD_TASK:
             return {
                 ...state,
                 todolists: state.todolists.map(tl => {
@@ -55,8 +58,8 @@ const reducer = (state = initialState, action) => {
                         return tl
                     }
                 })
-            }
-        case "UPDATE-TASK":
+            };
+        case UPDATE_TASK:
             return {
                 ...state,
                 todolists: state.todolists.map(tl => {
@@ -79,6 +82,21 @@ const reducer = (state = initialState, action) => {
     }
     console.log("reducer: ", action);
     return state;
+};
+
+export const updateTaskAC = (taskId,obj, todolistId) => {
+    return {type: UPDATE_TASK,taskId,obj, todolistId };
+};
+export const addTaskAC = (newTask, todolistId) => {
+   return {type: ADD_TASK,newTask, todolistId}
+};
+export const deleteTaskAC = (todolistId, taskId) => {
+    return {type: DELETE_TASK,todolistId, taskId}
+};
+export const deleteTodolistAC = (todolistId) => {
+    return {type: DELETE_TODOLIST, todolistId: todolistId} };
+export const addTodolist = (newTodolist) => {
+    return {type:ADD_TODOLIST, newTodolist: newTodolist }
 };
 
 export default reducer;
