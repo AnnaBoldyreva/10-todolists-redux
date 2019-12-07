@@ -3,6 +3,7 @@ import './App.css';
 import TodoList from "./TodoList";
 import AddNewItemForm from "./AddNewItemForm";
 import {connect} from "react-redux";
+import {addTodolist} from "./reducer";
 
 
 class App extends React.Component {
