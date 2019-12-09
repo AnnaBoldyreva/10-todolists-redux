@@ -18,7 +18,8 @@ const initialState = {
         },
         {"id": 1, "title": "tomorrow", tasks: []},
         {"id": 2, "title": "weewwe`", tasks: []},
-        {"id": 3, "title": "dddd", tasks: []}
+        {"id": 3, "title": "dddd", tasks: []},
+        {"id": 4, "title": "meow", tasks: []}
     ]
 };
 
